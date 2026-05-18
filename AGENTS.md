@@ -33,6 +33,7 @@
 - JUnit 5 + Spring Boot test annotations
 - Currently one smoke test; add tests under `src/test/java/com/personal/box_community_hub/`
 - Follow hexagonal test patterns: `*Test.java` per service, `*RepositoryTest.java` for persistence
+- Minimum coverage: 85%
 
 ## Key Dependencies (from pom.xml)
 - Spring Boot 4.0.3, Spring MVC, Spring Data JPA, Spring Security, Validation, PostgreSQL, Lombok
