@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Box_AddressVO {
+public class BoxAddressVO {
 
     @NotNull
     private String street;

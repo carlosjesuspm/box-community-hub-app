@@ -1,9 +1,8 @@
 package booking.domain.vo;
 
-public enum Booking_BookingStatusVO {
+public enum BookingStatusVO {
 
-    CONFIRMED("WAIT LIST"),
-    CANCELLED("CANCELLED"),
-    PENDING("PENDING");
-
+    CONFIRMED,
+    CANCELLED,
+    PENDING;
 }
