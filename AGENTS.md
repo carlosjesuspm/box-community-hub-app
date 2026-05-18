@@ -1,14 +1,20 @@
 # BoxCommunity Hub API — Agent Guide
 
+## General
+- Use best software development practices.
+- The application supports English and Spanish. Spanish is the default language.
+
 ## Build & Run
 - **Build**: `./mvnw.cmd clean install` (Maven wrapper, Java 17)
 - **Run**: `./mvnw.cmd spring-boot:run`
-- **Test**: `./mvnw.cmd test` (single smoke test: `BoxCommunityHubApiApplicationTests.contextLoads`)
+- **Test**: `./mvnw.cmd test`
 - **DB**: PostgreSQL (configure in `application.properties` — currently placeholder)
 
-## Codind Conventions
+## Coding Conventions
 - For backend components: prefer Java 17 with SpringBoot
 - For frontend components: prefer JS with React framework. 
+- English code and Spanish comments.
+- Functions and variables: camelCase.
 - Single quotes.
 - Follow clean code principles (DRY, KISS, SOLID, etc.)
 - Use semicolons.
