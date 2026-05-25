@@ -22,7 +22,7 @@
 
 ## Architecture
 - **Pattern**: DDD + Hexagonal architecture + Vertical slicing
-- **Structure per bounded context** (auth, booking, box, ClassSession, exercise, facility, membership, result, users, wod):
+- **Structure per bounded context** (auth, booking, box, ClassSession, exercise, facility, membership, result, user, wod):
   - `domain/` — entities + value objects (VOs in `domain/vo/`)
   - `application/` — use cases / services (currently empty)
   - `infrastructure/` — persistence / adapters (currently empty)
@@ -32,7 +32,7 @@
 - **Lombok** is on the classpath — prefer `@Data`, `@Builder`, `@Value` on entities/VOs
 - **VOs** should be `@Value` + `@Builder` (immutable pattern)
 - **Entities** should use `@Data` (or `@Getter`/`@Setter`)
-- **Naming**: PascalCase for classes, camelCase for fields; VOs use `_` separator (e.g., `User_EmailVO`, `BookingDateVO`) — follow existing convention
+- **Naming**: camelCase for class and fields; (`BookingDateVO`).
 - **Existing bugs to avoid** (don't replicate these patterns):
 
 ## Testing

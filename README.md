@@ -31,7 +31,7 @@
 * Box Management
     - Administrator.
     - Attendance monitoring.
-    - Personal chats with users.
+    - Personal chats with user.
     - Payments.
 
 ## **Installation Instructions**

@@ -1,8 +1,10 @@
 package ClassSession.domain;
 
+import user.domain.vo.UserId;
+
 public class ClassSession {
 
-    private string classSessionId;
+    private String classSessionId;
     private UserId coachId;
 
 }
