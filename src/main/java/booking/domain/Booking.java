@@ -20,7 +20,7 @@ public class Booking {
     private BookingDate bookingDate;
     private BookingStatus bookingStatus;
 
-        /**
+    /**
      * Creates a new {@code Booking} with all its value objects.
      *
      * @param bookingId     the unique identifier
