@@ -1,7 +1,6 @@
 package exercise.domain;
 
-import exercise.domain.vo.ExerciseId;
-import exercise.domain.vo.ExerciseLoad;
+import exercise.domain.vo.*;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -15,23 +14,33 @@ import lombok.Getter;
 @Builder
 public class Exercise {
 
-    private ExerciseId exerciseId;
-    private ExerciseLoad load;
+    private final ExerciseId exerciseId;
+    private final ExerciseName exerciseName;
+    private final ExerciseLoad load;
+    private final ExerciseCategory exerciseCategory;
+    private final ExerciseDescription exerciseDescription;
 
     /**
-     * Creates a new {@code Box} with all its value objects.
+     * Creates a new {@code Exercise} with all its value objects.
      *
-     * @param exerciseId the unique identifier
-     * @param load       the exercise load
+     * @param exerciseId         the unique identifier
+     * @param exerciseName       the name of the exercise
+     * @param load               the exercise load
+     * @param exerciseCategory   the category of the exercise
+     * @param exerciseDescription the description of the exercise
      */
-
     public Exercise(
             final ExerciseId exerciseId,
-            final ExerciseLoad load
-
+            final ExerciseName exerciseName,
+            final ExerciseLoad load,
+            final ExerciseCategory exerciseCategory,
+            final ExerciseDescription exerciseDescription
     ) {
         this.exerciseId = exerciseId;
+        this.exerciseName = exerciseName;
         this.load = load;
+        this.exerciseCategory = exerciseCategory;
+        this.exerciseDescription = exerciseDescription;
     }
 
 }
