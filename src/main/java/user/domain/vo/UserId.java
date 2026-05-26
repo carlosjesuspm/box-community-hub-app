@@ -1,7 +1,5 @@
 package user.domain.vo;
 
-import lombok.Value;
-
 import java.util.UUID;
 
 /**
@@ -9,10 +7,7 @@ import java.util.UUID;
  *
  * @since 1.0
  */
-@Value
-public class UserId {
-
-    UUID id;
+public record UserId(UUID id) {
 
     /**
      * Creates a new {@code UserId} with the given UUID.
