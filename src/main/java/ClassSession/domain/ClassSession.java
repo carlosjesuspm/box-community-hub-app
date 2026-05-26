@@ -5,6 +5,7 @@ import facility.domain.vo.FacilityId;
 import lombok.Builder;
 import lombok.Getter;
 import user.domain.vo.UserId;
+import wod.domain.vo.WodId;
 
 /**
  * Aggregate root representing a Class Session in the system.
@@ -43,7 +44,7 @@ public class ClassSession {
             final ClassSessionId classSessionId,
             final FacilityId facilityId,
             final UserId coachId,
-            final WodId WodId,
+            final WodId wodId,
             final ClassSessionSchedule classSessionSchedule,
             final ClassSessionDuration classSessionDuration,
             final ClassSessionCapacity classSessionCapacity,
