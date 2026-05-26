@@ -1,11 +1,44 @@
 package membership.domain;
 
+import lombok.Builder;
+import lombok.Getter;
+import membership.domain.vo.*;
+import user.domain.vo.UserId;
+
+@Getter
+@Builder
 public class Payment {
 
-    private String paymentId;
-    private Money money;
-    private Currency currency;
-    private MembershipType membershipType;
-    private PaymentStatus paymentStatus;
+    private final PaymentId paymentId;
+    private final UserId userId;
+    private final PaymentMoney paymentMoney;
+    private final PaymentCurrency paymentCurrency;
+    private final PaymentMembershipType paymentMembershipType;
+    private final PaymentStatus paymentStatus;
 
+    /**
+     * Creates a new {@code Payment} with all its value objects.
+     *
+     * @param paymentId             the unique identifier
+     * @param userId                the user who made the payment
+     * @param paymentMoney          the amount paid
+     * @param paymentCurrency       the currency of the payment
+     * @param paymentMembershipType the type of membership purchased
+     * @param paymentStatus         the current status of the payment
+     */
+    public Payment(
+            final PaymentId paymentId,
+            final UserId userId,
+            final PaymentMoney paymentMoney,
+            final PaymentCurrency paymentCurrency,
+            final PaymentMembershipType paymentMembershipType,
+            final PaymentStatus paymentStatus
+    ) {
+        this.paymentId = paymentId;
+        this.userId = userId;
+        this.paymentMoney = paymentMoney;
+        this.paymentCurrency = paymentCurrency;
+        this.paymentMembershipType = paymentMembershipType;
+        this.paymentStatus = paymentStatus;
+    }
 }
