@@ -11,7 +11,7 @@ public record ExerciseId(UUID id) {
      */
     public ExerciseId {
         if (id == null) {
-            throw new IllegalArgumentException("El ID de la clase no puede ser nulo");
+            throw new IllegalArgumentException("El ID del ejercicio no puede ser nulo");
         }
     }
 
