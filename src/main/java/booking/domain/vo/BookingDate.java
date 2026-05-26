@@ -15,11 +15,8 @@ public record BookingDate(LocalDateTime bookingDate) {
 
     /**
      * Creates a new {@code BookingDate} after validating the given date time.
-     *
-     * @param bookingDate the booking date and time
-     * @throws IllegalArgumentException if {@code bookingDate} is null or is in the past
      */
-    public BookingDate(LocalDateTime bookingDate) {
+    public BookingDate {
         if (bookingDate == null) {
             throw new IllegalArgumentException("La fecha de la reserva no puede ser nula");
         }
@@ -29,7 +26,5 @@ public record BookingDate(LocalDateTime bookingDate) {
         if (truncated.isBefore(LocalDateTime.now().withSecond(0).withNano(0))) {
             throw new IllegalArgumentException("La fecha de la reserva debe ser futura");
         }
-
-        this.bookingDate = truncated;
     }
 }

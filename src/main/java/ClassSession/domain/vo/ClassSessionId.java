@@ -1,4 +1,4 @@
-package ClassSession.domain.vo;
+package classSession.domain.vo;
 
 import java.util.UUID;
 

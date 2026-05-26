@@ -1,6 +1,6 @@
-package ClassSession.domain;
+package classSession.domain;
 
-import ClassSession.domain.vo.ClassSessionId;
+import classSession.domain.vo.ClassSessionId;
 import lombok.Builder;
 import lombok.Getter;
 import user.domain.vo.UserId;
