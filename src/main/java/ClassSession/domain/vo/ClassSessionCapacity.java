@@ -1,6 +1,6 @@
-package facility.domain.vo;
+package classSession.domain.vo;
 
-public record FacilityCapacity(int capacity, int maxCapacity) {
+public record ClassSessionCapacity(int capacity, int maxCapacity) {
 
     /**
      * Validates that both capacity values are positive and that capacity
@@ -8,7 +8,7 @@ public record FacilityCapacity(int capacity, int maxCapacity) {
      *
      * @throws IllegalArgumentException if validation fails
      */
-    public FacilityCapacity {
+    public ClassSessionCapacity {
         if (capacity <= 0) {
             throw new IllegalArgumentException("La capacidad debe ser un valor positivo");
         }

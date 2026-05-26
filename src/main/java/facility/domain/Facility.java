@@ -18,7 +18,7 @@ import lombok.Getter;
 public class Facility {
 
     private FacilityId facilityId;
-    private BoxId boxId;
+    private final BoxId boxId;
     private FacilityType facilityType;
     private FacilityCapacity facilityCapacity;
 
