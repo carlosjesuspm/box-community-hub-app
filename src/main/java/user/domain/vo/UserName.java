@@ -7,12 +7,9 @@ import lombok.Value;
  *
  * @since 1.0
  */
-@Value
-public class UserName {
+public record UserName (String name, String firstName, String lastName;) {
 
-    String name;
-    String firstName;
-    String lastName;
+    
 
     /**
      * Creates a new {@code UserName} after validating and normalizing the fields.
