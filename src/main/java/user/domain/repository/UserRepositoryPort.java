@@ -1,7 +1,6 @@
 package user.domain.repository;
 
 import java.util.List;
-import java.util.Optional;
 
 import user.domain.User;
 import user.domain.vo.UserEmail;
@@ -14,13 +13,13 @@ import user.domain.vo.UserRole;
  *
  * @since 1.0
  */
-public interface UserRepository {
+public interface UserRepositoryPort {
 
     User save(User user);
 
-    Optional<User> findById(UserId userId);
+    User findById(UserId userId);
 
-    Optional<User> findByEmail(UserEmail email);
+    User findByEmail(UserEmail email);
 
     List<User> findByRole(UserRole role);
 

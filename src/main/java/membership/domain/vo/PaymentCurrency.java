@@ -2,7 +2,6 @@ package membership.domain.vo;
 
 import java.util.Currency;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public record PaymentCurrency(Currency currency) {
 
