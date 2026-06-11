@@ -1,5 +1,7 @@
 package membership.domain;
 
+import java.math.BigDecimal;
+
 import lombok.Builder;
 import lombok.Getter;
 import membership.domain.vo.*;
@@ -40,5 +42,17 @@ public class Payment {
         this.paymentCurrency = paymentCurrency;
         this.paymentMembershipType = paymentMembershipType;
         this.paymentStatus = paymentStatus;
+    }
+
+    public PaymentMoney paymentDiscount() {
+    if ("YEARLY".equals(this.paymentMembershipType.type())) {
+        return new PaymentMoney(this.paymentMoney.amount()
+                .multiply(new BigDecimal("0.80")));
+    }
+    if ("QUARTERLY".equals(this.paymentMembershipType.type())) {
+        return new PaymentMoney(this.paymentMoney.amount()
+                .multiply(new BigDecimal("0.90")));
+    }
+    return this.paymentMoney;
     }
 }
