@@ -1,13 +1,12 @@
 package user.domain.vo;
 
-import lombok.Value;
 
 /**
  * Value Object representing a validated user name composed of a display name, first name and last name.
  *
  * @since 1.0
  */
-public record UserName (String name, String firstName, String lastName;) {
+public record UserName (String name, String firstName, String lastName) {
 
     
 
