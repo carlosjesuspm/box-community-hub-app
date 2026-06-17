@@ -13,7 +13,8 @@ import user.infrastructure.outbound.database.sql.mapper.UserEntityMapper;
 import user.infrastructure.outbound.database.sql.repository.UserJpaRepository;
 
 import java.util.List;
-import java.util.NoSuchElementException;
+
+import shared.exception.user.UserNotFoundException;
 
 @RequiredArgsConstructor
 @Component
@@ -31,14 +32,14 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
     public User findById(UserId userId) {
         return userJpaRepository.findById(userId.id())
                 .map(UserEntityMapper::fromUserEntityToUser)
-                .orElseThrow(()-> new NoSuchElementException("User not found"));
+                .orElseThrow(() -> new UserNotFoundException(userId.id()));
     }
 
     @Override
     public User findByEmail(UserEmail email) {
         return userJpaRepository.findByEmail(email.email())
                 .map(UserEntityMapper::fromUserEntityToUser)
-                .orElseThrow(()-> new NoSuchElementException("Email not found"));
+                .orElseThrow(() -> new UserNotFoundException(email.email()));
     }
 
 

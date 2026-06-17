@@ -1,6 +1,7 @@
 package user.application.find;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Component;
 
@@ -14,18 +15,18 @@ import user.domain.vo.UserRole;
 
 @Component
 @RequiredArgsConstructor
-public class FindUserCaseImp implements FindUserCase{
+public class FindUserCaseImp implements FindUserCase {
 
-    private final UserRepositoryPort userRepositoryPort; 
+    private final UserRepositoryPort userRepositoryPort;
 
     @Override
-    public User findById(UserId userId) {
-        return userRepositoryPort.findById(userId);
+    public User findById(UUID id) {
+        return userRepositoryPort.findById(new UserId(id));
     }
 
     @Override
-    public User findByEmail(UserEmail email) {
-        return userRepositoryPort.findByEmail(email);
+    public User findByEmail(String email) {
+        return userRepositoryPort.findByEmail(new UserEmail(email));
     }
 
     @Override
@@ -34,13 +35,13 @@ public class FindUserCaseImp implements FindUserCase{
     }
 
     @Override
-    public List<User> findByName(UserName name) {
-        return userRepositoryPort.findByName(name);
+    public List<User> findByName(String name) {
+        return userRepositoryPort.findByName(new UserName(name, name, name));
     }
 
     @Override
     public List<User> findAll() {
         return userRepositoryPort.findAll();
     }
-    
+
 }
