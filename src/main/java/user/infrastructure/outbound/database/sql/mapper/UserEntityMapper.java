@@ -1,4 +1,4 @@
-package user.infrastructure.database.sql.mapper;
+package user.infrastructure.outbound.database.sql.mapper;
 
 import user.domain.User;
 import user.domain.vo.UserAddress;
@@ -7,11 +7,11 @@ import user.domain.vo.UserId;
 import user.domain.vo.UserName;
 import user.domain.vo.UserPhone;
 import user.domain.vo.UserPhoto;
-import user.infrastructure.database.sql.entity.UserEntity;
+import user.infrastructure.outbound.database.sql.entity.UserEntity;
 
 public class UserEntityMapper {
 
-    public static UserEntity fromUserToEntity(User user) {
+    public static UserEntity fromUserToUserEntity(User user) {
         return UserEntity.builder()
                 .id(user.getUserId().id())
                 .name(user.getName().name())
@@ -29,7 +29,7 @@ public class UserEntityMapper {
                 .build();
     }
 
-    public static User fromEntityToUser(UserEntity entity) {
+    public static User fromUserEntityToUser(UserEntity entity) {
         return User.builder()
                 .userId(new UserId(entity.getId()))
                 .name(new UserName(entity.getName(), entity.getFirstName(), entity.getLastName()))

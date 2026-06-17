@@ -1,4 +1,4 @@
-package user.infrastructure.database.sql.entity;
+package user.infrastructure.outbound.database.sql.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package user.infrastructure.database.sql.adapter;
+package user.infrastructure.outbound.database.sql.adapter;
 
 import lombok.RequiredArgsConstructor;
 
@@ -9,8 +9,8 @@ import user.domain.vo.UserEmail;
 import user.domain.vo.UserId;
 import user.domain.vo.UserName;
 import user.domain.vo.UserRole;
-import user.infrastructure.database.sql.mapper.UserEntityMapper;
-import user.infrastructure.database.sql.repository.UserJpaRepository;
+import user.infrastructure.outbound.database.sql.mapper.UserEntityMapper;
+import user.infrastructure.outbound.database.sql.repository.UserJpaRepository;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -23,21 +23,21 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
 
     @Override
     public User save(User user) {
-        var entity = UserEntityMapper.fromUserToEntity(user);
-        return UserEntityMapper.fromEntityToUser(userJpaRepository.save(entity));
+        var entity = UserEntityMapper.fromUserToUserEntity(user);
+        return UserEntityMapper.fromUserEntityToUser(userJpaRepository.save(entity));
     }
 
     @Override
     public User findById(UserId userId) {
         return userJpaRepository.findById(userId.id())
-                .map(UserEntityMapper::fromEntityToUser)
+                .map(UserEntityMapper::fromUserEntityToUser)
                 .orElseThrow(()-> new NoSuchElementException("User not found"));
     }
 
     @Override
     public User findByEmail(UserEmail email) {
         return userJpaRepository.findByEmail(email.email())
-                .map(UserEntityMapper::fromEntityToUser)
+                .map(UserEntityMapper::fromUserEntityToUser)
                 .orElseThrow(()-> new NoSuchElementException("Email not found"));
     }
 
@@ -46,7 +46,7 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
     public List<User> findByRole(UserRole role) {
         return userJpaRepository.findByRole(role)
                 .stream()
-                .map(UserEntityMapper::fromEntityToUser)
+                .map(UserEntityMapper::fromUserEntityToUser)
                 .toList();
     }
 
@@ -54,7 +54,7 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
     public List<User> findByName(UserName name) {
         return userJpaRepository.findByNameContaining(name.name())
                 .stream()
-                .map(UserEntityMapper::fromEntityToUser)
+                .map(UserEntityMapper::fromUserEntityToUser)
                 .toList();
     }
 
@@ -62,7 +62,7 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
     public List<User> findAll() {
         return userJpaRepository.findAll()
                 .stream()
-                .map(UserEntityMapper::fromEntityToUser)
+                .map(UserEntityMapper::fromUserEntityToUser)
                 .toList();
     }
 

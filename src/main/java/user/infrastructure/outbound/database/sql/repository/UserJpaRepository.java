@@ -1,11 +1,11 @@
-package user.infrastructure.database.sql.repository;
+package user.infrastructure.outbound.database.sql.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import user.domain.vo.UserRole;
-import user.infrastructure.database.sql.entity.UserEntity;
+import user.infrastructure.outbound.database.sql.entity.UserEntity;
 
 import java.util.List;
 import java.util.Optional;
