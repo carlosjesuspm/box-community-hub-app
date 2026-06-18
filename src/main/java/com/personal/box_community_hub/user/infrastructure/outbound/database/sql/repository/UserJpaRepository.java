@@ -18,7 +18,7 @@ public interface UserJpaRepository extends JpaRepository<UserEntity, UUID> {
     List<UserEntity> findByRole(UserRole role);
 
     @Query("""
-            SELECT u FROM UserJpaEntity u
+            SELECT u FROM UserEntity u
             WHERE LOWER(u.name)      LIKE LOWER(CONCAT('%', :query, '%'))
                OR LOWER(u.firstName) LIKE LOWER(CONCAT('%', :query, '%'))
                OR LOWER(u.lastName)  LIKE LOWER(CONCAT('%', :query, '%'))
